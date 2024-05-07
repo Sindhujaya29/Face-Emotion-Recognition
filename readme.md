@@ -20,7 +20,6 @@ Using a Convolutional Neural Network (CNN) to recognize facial expressions from 
 - [Recognizing facial expressions from an image file](#recognize-image)
 - [Recognizing facial expressions in real time from video/camera](#recognize-video)
 
-[5. Contributing](#contrib)
 
 <br />
 
@@ -90,18 +89,14 @@ Note: the code was tested in python 2.7 and 3.6.
 - Tflearn
 - Numpy
 - Argparse
-- [optional] Hyperopt + pymongo + networkx
-- [optional] dlib, imutils, opencv 3
-- [optional] scipy, pandas, skimage
+- dlib, imutils, opencv 3
+- scipy, pandas, skimage
 
-Better to use anaconda environemnt to easily install the dependencies (especially opencv and dlib)
 
 ## <a name="data">4.2. Download and prepare the data</a>
 
 1. Download Fer2013 dataset and the Face Landmarks model
 
-    - [Kaggle Fer2013 challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data)
-    - [Dlib Shape Predictor model](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)
 
 2. Unzip the downloaded files
 
@@ -124,7 +119,6 @@ Better to use anaconda environemnt to easily install the dependencies (especiall
     Examples:
     ```
     python convert_fer2013_to_images_and_landmarks.py
-    python convert_fer2013_to_images_and_landmarks.py --landmarks=yes --hog=no --how_windows=no --jpg=no --expressions=1,4,6
     ```
     The script will create a folder with the data prepared and saved as numpy arrays.
     Make sure the `--onehot` argument set to `yes` (default value)
@@ -205,16 +199,3 @@ python predict-from-video.py
 A window will appear with a box around the face and the predicted expression.
 Press 'q' key to stop.
 
-N.B: If you changed the number of expressions while training the model (default 7 expressions), please update the emotions array in `parameters.py` line 51.
-
-
-# <a name="contrib">5. Contributing</a>
-
-Some ideas for interessted contributors:
-- Automatically downloading the data
-- Adding data augmentation?
-- Adding other features extraction techniques?
-- Improving the models
-
-Feel free to add or suggest more ideas.
-Please report any bug in the [issues section](https://github.com/amineHorseman/facial-expression-recognition-using-cnn/issues).
